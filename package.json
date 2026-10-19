@@ -1,0 +1,42 @@
+{
+  "name": "numeric-core",
+  "version": "1.0.0",
+  "description": "Unofficial solver for the numeric core puzzle in Blue Prince. Finds the numeric core of four numbers, or a four-letter word: the smallest whole number you can make by combining them with +, -, *, and /, worked out left to right.",
+  "keywords": [
+    "numeric-core",
+    "blue-prince",
+    "blueprince",
+    "puzzle",
+    "solver",
+    "game",
+    "arithmetic",
+    "operators",
+    "cipher",
+    "a1z26"
+  ],
+  "license": "ISC",
+  "author": "Punit Shah",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "vitest",
+    "words": "node words.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}
