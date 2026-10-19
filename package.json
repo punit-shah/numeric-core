@@ -16,6 +16,14 @@
   ],
   "license": "ISC",
   "author": "Punit Shah",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/punit-shah/numeric-core.git"
+  },
+  "homepage": "https://github.com/punit-shah/numeric-core#readme",
+  "bugs": {
+    "url": "https://github.com/punit-shah/numeric-core/issues"
+  },
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
