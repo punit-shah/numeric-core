@@ -1,6 +1,6 @@
 {
   "name": "numeric-core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Unofficial solver for the numeric core puzzle in Blue Prince. Finds the numeric core of four numbers, or a four-letter word: the smallest whole number you can make by combining them with +, -, *, and /, worked out left to right.",
   "keywords": [
     "numeric-core",
