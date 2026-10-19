@@ -40,7 +40,7 @@
     "build": "tsc",
     "prepublishOnly": "npm run build",
     "test": "vitest",
-    "words": "node words.ts"
+    "solver": "node solver.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",
