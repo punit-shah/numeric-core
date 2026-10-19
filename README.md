@@ -6,7 +6,7 @@ Unofficial solver for the numeric core puzzle in Blue Prince.
 
 Using this package can reveal puzzle answers from Blue Prince. Recommended only if you don't enjoy manual numeric coring, or to check your answers.
 
-Finds the numeric core of four numbers, or a four-letter word: the smallest whole number you can make by combining them with `+`, `-`, `*`, and `/`, worked out left to right.
+Finds the numeric core of four numbers: the smallest whole number you can make by combining them with `+`, `-`, `*`, and `/`, worked out left to right.
 
 ## Install
 
@@ -20,6 +20,9 @@ npm install numeric-core
 import { numericCore, wordNumericCore, numberToLetter } from "numeric-core";
 
 numericCore(8, 6, 45, 5);
+// { value: 18, equation: "+ 8 - 6 * 45 / 5" }
+
+romanNumericCore("VIII", "VI", "XLV", "V");
 // { value: 18, equation: "+ 8 - 6 * 45 / 5" }
 
 const result = wordNumericCore("BEAD"); // B=2, E=5, A=1, D=4
@@ -37,14 +40,23 @@ numberToLetter(result.value); // "F"
 
 ## API
 
-| Function                  | Returns              | Description                                                                                                               |
-| ------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `numericCore(a, b, c, d)` | `CoreResult \| null` | The numeric core of the four numbers, or `null` if coring isn't possible.                                                 |
-| `wordNumericCore(word)`   | `CoreResult \| null` | Turns each letter of a four-letter word into a number (A=1 ... Z=26) and cores them. Throws if `word` isn't four letters. |
-| `letterToNumber(letter)`  | `number`             | Converts a letter to its position in the alphabet (A=1 ... Z=26).                                                         |
-| `numberToLetter(number)`  | `string \| null`     | Converts a number to a letter (1=A ... 26=Z), or `null` if the number is outside 1-26.                                    |
+### Core functions
+
+| Function                       | Returns              | Description                                              |
+| ------------------------------ | -------------------- | -------------------------------------------------------- |
+| `numericCore(a, b, c, d)`      | `CoreResult \| null` | Finds the numeric core of the given four numbers.        |
+| `romanNumericCore(a, b, c, d)` | `CoreResult \| null` | Finds the numeric core of the given four Roman numerals. |
+| `wordNumericCore(word)`        | `CoreResult \| null` | Finds the numeric core of the given 4-letter word.       |
 
 `CoreResult` is `{ value: number; equation: string }`, where `value` is the numeric core and `equation` is the equation that produced it, e.g. `"+ 8 - 6 * 45 / 5"`.
+
+### Utilities
+
+| Function                      | Returns          | Description                                                                            |
+| ----------------------------- | ---------------- | -------------------------------------------------------------------------------------- |
+| `romanToNumber(romanNumeral)` | `number`         | Converts a Roman numeral to a number.                                                  |
+| `letterToNumber(letter)`      | `number`         | Converts a letter to its position in the alphabet (A=1 ... Z=26).                      |
+| `numberToLetter(number)`      | `string \| null` | Converts a number to a letter (1=A ... 26=Z), or `null` if the number is outside 1-26. |
 
 ## Disclaimer
 
