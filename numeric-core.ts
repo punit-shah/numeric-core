@@ -1,4 +1,4 @@
-import { letterToNumber } from "./utils.ts";
+import { letterToNumber, romanToNumber } from "./utils.ts";
 
 type Operator = "+" | "-" | "*" | "/";
 type OperatorOrder = [Operator, Operator, Operator];
@@ -89,6 +89,20 @@ export function numericCore(
   }
 
   return best;
+}
+
+export function romanNumericCore(
+  a: string,
+  b: string,
+  c: string,
+  d: string,
+): CoreResult | null {
+  return numericCore(
+    romanToNumber(a),
+    romanToNumber(b),
+    romanToNumber(c),
+    romanToNumber(d),
+  );
 }
 
 /** Turns each letter of a 4-letter word into a number and finds the core. */
