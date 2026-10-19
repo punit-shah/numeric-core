@@ -37,21 +37,14 @@ numberToLetter(result.value); // "F"
 
 ## API
 
-### `numericCore(a, b, c, d)`
+| Function                  | Returns              | Description                                                                                                               |
+| ------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `numericCore(a, b, c, d)` | `CoreResult \| null` | The numeric core of the four numbers, or `null` if coring isn't possible.                                                 |
+| `wordNumericCore(word)`   | `CoreResult \| null` | Turns each letter of a four-letter word into a number (A=1 ... Z=26) and cores them. Throws if `word` isn't four letters. |
+| `letterToNumber(letter)`  | `number`             | Converts a letter to its position in the alphabet (A=1 ... Z=26).                                                         |
+| `numberToLetter(number)`  | `string \| null`     | Converts a number to a letter (1=A ... 26=Z), or `null` if the number is outside 1-26.                                    |
 
-Returns `{ value, equation }` for the numeric core of the numbers `a`, `b`, `c`, & `d`, or `null` if coring isn't possible for the four numbers.
-
-### `wordNumericCore(word)`
-
-Turns each letter of the given four-letter word into a number (A=1 ... Z=26), and returns the result of `numericCore` for those four numbers.
-
-### `letterToNumber(letter)`
-
-Converts a letter to a number.
-
-### `numberToLetter(number)`
-
-Coverts a number to a letter. Returns `null` if the given number is outside 1-26.
+`CoreResult` is `{ value: number; equation: string }`, where `value` is the numeric core and `equation` is the equation that produced it, e.g. `"+ 8 - 6 * 45 / 5"`.
 
 ## Disclaimer
 
