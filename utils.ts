@@ -36,6 +36,9 @@ export function romanToNumber(numeral: string): number {
 
 /** Converts a letter to its position in the alphabet (A=1 ... Z=26) */
 export function letterToNumber(letter: string): number {
+  if (!/^[a-z]$/i.test(letter)) {
+    throw new Error(`"${letter}" is not a letter.`);
+  }
   return letter.toUpperCase().charCodeAt(0) - 64;
 }
 

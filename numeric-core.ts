@@ -66,8 +66,7 @@ export type CoreResult = {
 };
 
 /**
- * Tries every operator order and returns the smallest whole-number answer,
- * or null if a whole number answer is not possible.
+ * Finds the numeric core of the given four numbers.
  */
 export function numericCore(
   a: number,
@@ -77,6 +76,7 @@ export function numericCore(
 ): CoreResult | null {
   let best: CoreResult | null = null;
 
+  // try every possible operator order, saving the smallest whole-number result in `best`
   for (const order of OPERATOR_ORDERS) {
     const value = evaluate([a, b, c, d], order);
     if (value === null) continue;
@@ -91,6 +91,9 @@ export function numericCore(
   return best;
 }
 
+/**
+ * Finds the numeric core of the given four Roman numerals.
+ */
 export function romanNumericCore(
   a: string,
   b: string,
@@ -105,7 +108,7 @@ export function romanNumericCore(
   );
 }
 
-/** Turns each letter of a 4-letter word into a number and finds the core. */
+/** Finds the numeric core of the given 4-letter word. */
 export function wordNumericCore(word: string): CoreResult | null {
   if (!/^[a-z]{4}$/i.test(word)) {
     throw new Error(`"${word}" is not a 4-letter word.`);

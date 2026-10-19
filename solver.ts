@@ -11,10 +11,10 @@ import { numberToLetter } from "./utils.ts";
 // Find the numeric core of a set of Roman numerals
 const numerals: [string, string, string, string] = [
   // replace this with the numerals from the puzzle
-  "XIV",
-  "VII",
+  "VIII",
+  "VI",
+  "XLV",
   "V",
-  "II",
 ];
 
 // Find the numeric cores of a grid of words, then translate the cores back to letters.
