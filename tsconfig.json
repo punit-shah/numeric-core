@@ -1,6 +1,8 @@
 {
-  "include": ["index.ts", "numeric-core.ts", "utils.ts"],
+  "include": ["*.ts"],
   "compilerOptions": {
+    "noEmit": true,
+
     "module": "nodenext",
     "rewriteRelativeImportExtensions": true,
     "target": "esnext",
