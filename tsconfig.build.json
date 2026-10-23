@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["index.ts", "numeric-core.ts", "utils.ts"],
+  "include": ["index.ts"],
   "compilerOptions": {
     "noEmit": false
   }
